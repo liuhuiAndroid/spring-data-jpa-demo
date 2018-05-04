@@ -1,11 +1,19 @@
 package com.example.demo.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.math.BigDecimal;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-import java.math.BigDecimal;
 
 /**
  * Created by Administrator on 2017/7/17 0017.
@@ -25,6 +33,7 @@ public class MyOrder {
     //实体映射重复列必须设置：insertable = false,updatable = false
     @OneToOne
     @JoinColumn(name = "cId", insertable = false, updatable = false)
+    @JsonIgnore
     private Customer customer;
 
     @Override

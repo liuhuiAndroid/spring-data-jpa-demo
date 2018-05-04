@@ -4,6 +4,7 @@ import com.example.demo.dto.Customer;
 import com.example.demo.dto.MyOrder;
 import com.example.demo.repositories.MyOrderRepository;
 import com.example.demo.util.SpecificationFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,9 +14,15 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
+import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 
 /**
  * Created by Administrator on 2017/7/17 0017.
